@@ -7,6 +7,6 @@ Proyecto individual para la materia de Programación Web Avanzada.
 - [ ] Tipos de usuarios
   - [ ] Administrador: permiso sobre todas las acciones dentro del sistema
   - [ ] Inventario: permiso crear y consultar videojuegos
+- [x] Validaciones con JSF
 - [ ] Estilos en páginas
-- [ ] Documentación
 - [ ] Video de demostración de la ejecución

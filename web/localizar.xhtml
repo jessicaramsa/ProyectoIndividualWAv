@@ -16,17 +16,19 @@ and open the template in the editor.
             <h2 style="color: blue">Proporciona clave y nombre del Videojuego a modificar</h2>
             
             <span>Clave:</span>
-            <h:inputText value="#{controllerManagedBean.clave}" style="width: 25%"/>
+            <h:inputText value="#{controllerManagedBean.clave}" style="width: 25%" required="true"/>
             <br/><br/>
             
             <span>Nombre:</span>
-            <h:inputText value="#{controllerManagedBean.nombre}" style="width: 25%"/>
+            <h:inputText value="#{controllerManagedBean.nombre}" style="width: 25%" required="true"/>
             <br/><br/>
             <br/><br/>
             
-            <h:commandButton value="Regresar" action="index"/>
             <h:commandButton value="Localizar" type="submit"
                     action="#{controllerManagedBean.localizarVideojuego()}"/>
+        </h:form>
+        <h:form style="width: 100%; padding: 20px 33px;" class="form-group">
+            <h:commandButton value="Regresar" action="faces/videojuegos.xhtml"/>
         </h:form>
     </h:body>
 </html>

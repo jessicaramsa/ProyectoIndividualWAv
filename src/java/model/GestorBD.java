@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class GestorBD {
     private Connection conexion = null;
     private Statement stm = null;
-    private ResultSet videojuegoResultSet;
+    private ResultSet videojuegoResultSet, usuarioResultSet;
     private Integer clave;
     private String nombre, genero, plataforma, precio;
     private int resultUpdate = 0;
@@ -183,6 +183,54 @@ public class GestorBD {
             System.out.println("Error en la base de datos.");
             sqle.printStackTrace();
             return false;
+        }
+    }
+    
+    public boolean localizaUsuario(String username, String password) {
+        try {
+            ConectaBD conectaBD = new ConectaBD();
+            conexion = conectaBD.getConexion();
+            stm = conexion.createStatement();
+            usuarioResultSet = stm.executeQuery("SELECT * FROM usuario"
+                    + " WHERE (username = '" + username + "'"
+                    + " AND password = '" + password + "');"
+            );
+            if (!usuarioResultSet.next()) {
+                System.out.println("No se encontraron registros.");
+                conexion.close();
+                return false;
+            } else {
+                conexion.close();
+                return true;
+            }
+        } catch(SQLException sqle) {
+            System.out.println("Error en la base de datos.");
+            sqle.printStackTrace();
+            return false;
+        }
+    }
+    
+    public String localizaRolUsuario(String username) {
+        try {
+            ConectaBD conectaBD = new ConectaBD();
+            conexion = conectaBD.getConexion();
+            stm = conexion.createStatement();
+            usuarioResultSet = stm.executeQuery("SELECT * FROM usuario"
+                    + " WHERE username = '" + username  + "';"
+            );
+            if (!usuarioResultSet.next()) {
+                System.out.println("No se encontraron registros.");
+                conexion.close();
+                return null;
+            } else {
+                String rol = usuarioResultSet.getString("rol");
+                conexion.close();
+                return rol;
+            }
+        } catch(SQLException sqle) {
+            System.out.println("Error en la base de datos.");
+            sqle.printStackTrace();
+            return null;
         }
     }
 }

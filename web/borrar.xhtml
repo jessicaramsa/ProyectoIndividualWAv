@@ -20,10 +20,12 @@
             <br/><br/>
             
             <span>
-                <h:commandButton value="Regresar" action="index"/>
                 <h:commandButton value="Eliminar" type="submit"
                         action="#{controllerManagedBean.borrarVideojuego()}"/>
             </span>
+        </h:form>
+        <h:form style="width: 100%; padding: 20px 33px;" class="form-group">
+            <h:commandButton value="Regresar" action="faces/videojuegos.xhtml"/>
         </h:form>
     </body>
 </html>
