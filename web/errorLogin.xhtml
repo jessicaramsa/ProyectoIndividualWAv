@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Error</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form id="form" style="width: 100%;padding: 20px 33px;">
+            <img src="#{request.contextPath}/imgs/error.jpg" width="80"  height="80"/>
+            <h2 style="color: blue;">ERROR, no se encontró un Usuario con:</h2>
+            
+            <span>Email:</span>
+            <h:outputText value="#{LoginController.email}" style=" width:25%;"/>
+            <br/><br/>
+            <span>
+                <h:commandButton value="OK" action="faces/login.xhtml"/>
+            </span>
+        </h:form>
+    </h:body>
+</html>
