@@ -69,7 +69,7 @@ public class GestorBD {
                 return true;
             } else {
                 conexion.close();
-                System.out.println("No se pudo insertar el Videojuego.");
+                System.out.println("No se pudo insertar el videojuego.");
                 return false;
             }
         } catch(SQLException sqle) {
@@ -94,7 +94,7 @@ public class GestorBD {
                 return true;
             } else {
                 conexion.close();
-                System.out.println("No se pudo borrar el Videojuego.");
+                System.out.println("No se pudo borrar el videojuego.");
                 return false;
             }
         } catch(SQLException sqle) {
@@ -167,7 +167,7 @@ public class GestorBD {
             resultUpdate = stm.executeUpdate("UPDATE videojuego SET "
                     + "nombre = '" + videojuegoACambiar.getNombre() + "', "
                     + "genero = '" + videojuegoACambiar.getGenero() + "', "
-                    + "plataforma = '" + videojuegoACambiar.getPlataforma() + "' "
+                    + "plataforma = '" + videojuegoACambiar.getPlataforma() + "', "
                     + "precio = '" + videojuegoACambiar.getPrecio() + "' "
                     + "WHERE clave = " + videojuegoACambiar.getClave() + ";"
             );
@@ -176,7 +176,7 @@ public class GestorBD {
                 return true;
             } else {
                 conexion.close();
-                System.out.println("No se pudo modificar el Videojuego.");
+                System.out.println("No se pudo modificar el videojuego.");
                 return false;
             }
         } catch(SQLException sqle) {

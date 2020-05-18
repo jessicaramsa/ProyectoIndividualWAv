@@ -34,7 +34,10 @@
                         </h2>
                         <div class="form-group">
                             <span>Clave</span>
-                            <h:inputText value="#{controllerManagedBean.clave}" class="form-control" required="true"/>
+                            <h:inputText value="#{controllerManagedBean.clave}" class="form-control" required="true">
+                                <f:validateLength maximum="6"/>
+                                <f:validateLongRange minimum="000001"/>
+                            </h:inputText>
                         </div>
                         <div class="form-group">
                             <span>Nombre</span>

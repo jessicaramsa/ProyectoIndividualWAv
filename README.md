@@ -9,4 +9,3 @@ Proyecto individual para la materia de Programación Web Avanzada.
   - [x] Inventario: permiso crear y consultar videojuegos
 - [x] Validaciones con JSF
 - [x] Estilos en páginas
-- [ ] Video de demostración de la ejecución
