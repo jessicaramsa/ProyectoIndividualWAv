@@ -2,24 +2,43 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
+    <head>
         <title>Error</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </h:head>
-    <h:body>
-        <h:form id="form" style="width: 100%;padding: 20px 33px;">
-            <img src="#{request.contextPath}/imgs/error.jpg" width="80"  height="80"/>
-            <h2 style="color: blue;">ERROR, no se encontró un Videjuego con:</h2>
-            
-            <span>Clave: </span>
-            <h:outputText value="#{controllerManagedBean.clave}" style=" width:25%;"/>
-            <br/><br/>
-            
-            <span>Nombre: </span>
-            <h:outputText value="#{controllerManagedBean.nombre}" style=" width:25%;"/>
-        </h:form>
-        <h:form style="width: 100%; padding: 20px 33px;" class="form-group">
-            <h:commandButton value="Regresar" action="faces/videojuegos.xhtml"/>
-        </h:form>
-    </h:body>
+        <link rel="stylesheet" href="#{request.contextPath}/resources/styles/bootstrap.min.css"/>
+        <style>
+            form {
+                padding: 2em;
+                margin-top: 2em;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <p class="navbar-brand">¡Hola, #{loginController.username}!</p>
+            <h:form class="form-inline navbar-text my-2 my-lg-0">
+                <h:commandLink action="#{loginController.logout}" value="Cerrar sesión"
+                               class="my-2 my-sm-0"/>
+            </h:form>
+        </nav>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <h:form id="form">
+                    <img src="#{request.contextPath}/resources/imgs/error.png" width="80" height="80"/>
+                    <h2 class="text-center">ERROR, no se encontró un videjuego con:</h2>
+                    <div class="form-group">
+                        <span>Clave:</span>
+                        <h:outputText value="#{controllerManagedBean.clave}"/>
+                    </div>
+                    <div class="form-group">
+                        <span>Nombre:</span>
+                        <h:outputText value="#{controllerManagedBean.nombre}"/>
+                    </div>
+                </h:form>
+                <h:form class="form-group">
+                    <h:commandButton value="Regresar" action="faces/videojuegos.xhtml" class="btn btn-primary btn-block"/>
+                </h:form>
+            </div>
+        </div>
+    </body>
 </html>
