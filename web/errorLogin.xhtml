@@ -4,8 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <head>
         <title>Error</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="#{request.contextPath}/styles/bootstrap.min.css"/>
+        <link rel="stylesheet" href="#{request.contextPath}/resources/styles/bootstrap.min.css"/>
         <style>
             form {
                 padding: 2em;
@@ -22,7 +21,7 @@
                     <h2 class="text-center">ERROR, no se encontró un usuario con:</h2>
                     <div class="form-group">
                         <span>Username</span>
-                        <h:outputText value="#{LoginController.username}"/>
+                        <h:outputText value="#{LoginController.username}" class="form-control"/>
                     </div>
                 </h:form>
                 <h:form class="form-group">

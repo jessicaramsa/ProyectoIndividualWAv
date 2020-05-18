@@ -16,6 +16,9 @@
     <body>
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <p class="navbar-brand">¡Hola, #{loginController.username}!</p>
+            <h:form style="margin-top: -1em" class="form-inline navbar-text my-2 my-lg-0">
+                <h:commandLink value="Videojuegos" action="faces/videojuegos.xhtml" class="nav-item nav-link"/>
+            </h:form>
             <h:form class="form-inline navbar-text my-2 my-lg-0">
                 <h:commandLink action="#{loginController.logout}" value="Cerrar sesión"
                                class="my-2 my-sm-0"/>
@@ -25,14 +28,16 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6">
                     <h:form id="form">
-                        <h2 class="text-center">Proporciona clave y nombre del videojuego a eliminar</h2>
+                        <h2 class="text-center" style="padding-top: .5em">
+                            Borrar videojuego
+                        </h2>
                         <div class="form-group">
-                            <span>Clave:</span>
-                            <h:inputText value="#{controllerManagedBean.clave}" required="true"/>
+                            <span>Clave</span>
+                            <h:inputText value="#{controllerManagedBean.clave}" class="form-control" required="true"/>
                         </div>
                         <div class="form-group">
-                            <span>Nombre:</span>
-                            <h:inputText value="#{controllerManagedBean.nombre}" required="true"/>
+                            <span>Nombre</span>
+                            <h:inputText value="#{controllerManagedBean.nombre}" class="form-control" required="true"/>
                         </div>
                         <span>
                             <h:commandButton value="Eliminar" type="submit"
@@ -41,7 +46,9 @@
                         </span>
                     </h:form>
                     <h:form>
-                        <h:commandButton value="Regresar" action="faces/videojuegos.xhtml" class="btn btn-primary btn-block"/>
+                        <h:commandButton value="Regresar" action="faces/videojuegos.xhtml"
+                                         class="btn btn-primary btn-block"
+                                         style="margin-top: -5em"/>
                     </h:form>
                 </div>
             </div>

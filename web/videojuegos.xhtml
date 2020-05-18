@@ -19,13 +19,15 @@
     <body>
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <p class="navbar-brand">¡Hola, #{loginController.username}!</p>
+            <h:form style="margin-top: -1em" class="form-inline navbar-text my-2 my-lg-0">
+                <h:commandLink value="Videojuegos" action="faces/videojuegos.xhtml" class="nav-item nav-link"/>
+            </h:form>
             <h:form class="form-inline navbar-text my-2 my-lg-0">
                 <h:commandLink action="#{loginController.logout}" value="Cerrar sesión"
                                class="my-2 my-sm-0"/>
             </h:form>
         </nav>
-        <h2 class="text-center">Lista de Videojuegos</h2>
-        <div class="container">
+        <div class="container" style="padding-top: 2em">
             <div class="row justify-content-center">
                 <div class="">
                     <h:form>
@@ -57,14 +59,14 @@
                         </h:dataTable>
                         <h:commandButton value="Agregar videojuego" type="submit"
                                          action="#{controllerManagedBean.pedirDatosVideojuego_aAgregar()}"
-                                         class="btn btn-primary btn-block"/>
+                                         class="btn btn-success btn-block"/>
                         <c:if test="#{loginController.rol eq 'admin'}">
                             <h:commandButton value="Borrar videojuego" type="submit"
                                              action="#{controllerManagedBean.pedirDatosVideojuego_aBorrar()}"
                                              class="btn btn-danger btn-block"/>
                             <h:commandButton value="Modificar videojuego" type="submit"
                                              action="#{controllerManagedBean.pedirDatosVideojuego_aLocalizar()}"
-                                             class="btn btn-secondary btn-block"/>
+                                             class="btn btn-info btn-block"/>
                         </c:if>
                     </h:form>
                 </div>
